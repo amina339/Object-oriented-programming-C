@@ -1,0 +1,14 @@
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\bin\Debug\net8.0\VendingMachineConsoleApp.exe
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\bin\Debug\net8.0\VendingMachineConsoleApp.deps.json
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\bin\Debug\net8.0\VendingMachineConsoleApp.runtimeconfig.json
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\bin\Debug\net8.0\VendingMachineConsoleApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\bin\Debug\net8.0\VendingMachineConsoleApp.pdb
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.AssemblyInfoInputs.cache
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.AssemblyInfo.cs
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\refint\VendingMachineConsoleApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.pdb
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.genruntimeconfig.cache
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\ref\VendingMachineConsoleApp.dll
