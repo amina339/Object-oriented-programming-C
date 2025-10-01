@@ -1,4 +1,4 @@
-﻿//Console.OutputEncoding = System.Text.Encoding.UTF8;
+﻿//Console.OutputEncoding = System.Text.Encoding.UTF8; //Просто файл, в котором я иногда проверяла работу отдельных объектов классов. В логике программы не используется
 //Product cookie = new Product(23, "🍇", 30, 5);
 //Product sushi = new Product(23, "🍈", 30, 5);
 //Product cola = new Product(23, "🍇", 30, 5);
