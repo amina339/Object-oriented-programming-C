@@ -101,6 +101,10 @@ class MyProgram
                         {
                             MoneyCollector.GetTotal(); // Забираем деньги
                         }
+                        else
+                        {
+                            Console.WriteLine("Такого действия нет");
+                        }
                         Console.WriteLine("Выйти из администраторского режима (д/н или другая кнопка)");
                         string answer = Console.ReadLine();
                         if (answer == "д")
