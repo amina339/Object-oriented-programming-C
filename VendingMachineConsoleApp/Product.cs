@@ -57,7 +57,7 @@ public class Product
     {
         if (Quantity < 1)
         {
-            Console.WriteLine($"⚠️ Товар №{Id} ({ProductType}) закончился или был введен неверный Id. Выберите другой");
+            Console.WriteLine($"⚠️ Товар №{Id} ({ProductType}) закончился или был введен неверный Id");
             return false;
         }
         else
