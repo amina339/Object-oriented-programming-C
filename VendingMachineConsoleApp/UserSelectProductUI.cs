@@ -59,6 +59,7 @@ public class UserSelectProductUI
                         }
                     }
                 }
+                Console.WriteLine("Некорректный ввод.Попробуйте еще раз");
             }
             else
             {
