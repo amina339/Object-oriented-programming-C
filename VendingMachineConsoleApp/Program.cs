@@ -31,18 +31,30 @@ class MyProgram
             }
             else if (user_type == "клиент")
             {   // Ветка клиента (выбор, покупка продукта и тд)
-
                 UserSelectProductUI user = new UserSelectProductUI(products);
-                UserSelectProductUI.PrintVendingMachine(products); // Показываем продукты
-                Product selected_product = user.SelectProduct();
-                if (selected_product != null)
+                bool flag = true;
+                while (flag)
                 {
-                    decimal sum = CoinPay.AcceptGiveCoins(selected_product);
-                    if (sum > 0)
+                    UserSelectProductUI.PrintVendingMachine(products); // Показываем продукты
+                    Product selected_product = user.SelectProduct();
+                    if (selected_product != null)
                     {
-                        MoneyCollector.AddCoin(sum);
+                        decimal sum = CoinPay.AcceptGiveCoins(selected_product);
+                        if (sum > 0)
+                        {
+                            MoneyCollector.AddCoin(sum);
+                        }
                     }
+                    Console.WriteLine("Выйти из клиентского режима (д/н или другая кнопка)");
+                    string answer = Console.ReadLine();
+                    if (answer == "д")
+                    {
+                        flag = false;
+                        Console.WriteLine("Вы вышли из клиентского режима");
+                    }
+                    else { flag = true; }
                 }
+                
             }
             else if (user_type == "администратор") // Ветка администратора
             {
@@ -51,40 +63,52 @@ class MyProgram
                 AdministratorUser? admin = AdministratorUser.Create(input_password);
                 if (admin != null)
                 {
-                    Console.WriteLine("Выберите действие: Пополнить ассортимент (0), сбор собранных средств (1)");
-                    string action = Console.ReadLine(); // Выбираем действие администратора
-                    if (action == "0")
+                    bool flag = true;
+                    while (flag)
                     {
-                        UserSelectProductUI.PrintVendingMachine(products);
-                        bool cont = true;
-                        while (cont)
+                        Console.WriteLine("Выберите действие: Пополнить ассортимент (0), сбор собранных средств (1)");
+                        string action = Console.ReadLine(); // Выбираем действие администратора
+                        if (action == "0")
                         {
-                            Console.WriteLine("Выберите Id товара: ");
-                            string fill_id = Console.ReadLine();
+                            UserSelectProductUI.PrintVendingMachine(products);
+                            bool cont = true;
+                            while (cont)
+                            {
+                                Console.WriteLine("Выберите Id товара: ");
+                                string fill_id = Console.ReadLine();
 
-                            if (int.TryParse(fill_id, out int Id))
-                            {
-                                bool found = false;
-                                for (int i = 0; i < products.Count; i++) // Находим нужный продукт
+                                if (int.TryParse(fill_id, out int Id))
                                 {
-                                    if (products[i].Id == Id)
+                                    bool found = false;
+                                    for (int i = 0; i < products.Count; i++) // Находим нужный продукт
                                     {
-                                        admin.RefillProduct(products[i]); // Пополняем его
-                                        found = true;
-                                        cont = false;
+                                        if (products[i].Id == Id)
+                                        {
+                                            admin.RefillProduct(products[i]); // Пополняем его
+                                            found = true;
+                                            cont = false;
+                                        }
                                     }
+                                    if (!found) { Console.WriteLine("Был введен неверный Id"); }
                                 }
-                                if (!found) { Console.WriteLine("Был введен неверный Id");}
-                            }
-                            else
-                            {
-                                Console.WriteLine("Был введен неверный Id");
+                                else
+                                {
+                                    Console.WriteLine("Был введен неверный Id");
+                                }
                             }
                         }
-                    }
-                    else if (action == "1")
-                    {
-                        MoneyCollector.GetTotal(); // Забираем деньги
+                        else if (action == "1")
+                        {
+                            MoneyCollector.GetTotal(); // Забираем деньги
+                        }
+                        Console.WriteLine("Выйти из клиентского режима (д/н или другая кнопка)");
+                        string answer = Console.ReadLine();
+                        if (answer == "д")
+                        {
+                            flag = false;
+                            Console.WriteLine("Вы вышли из клиентского режима");
+                        }
+                        else { flag = true; }
                     }
                 }
             }
