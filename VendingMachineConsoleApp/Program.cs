@@ -101,12 +101,12 @@ class MyProgram
                         {
                             MoneyCollector.GetTotal(); // Забираем деньги
                         }
-                        Console.WriteLine("Выйти из клиентского режима (д/н или другая кнопка)");
+                        Console.WriteLine("Выйти из администраторского режима (д/н или другая кнопка)");
                         string answer = Console.ReadLine();
                         if (answer == "д")
                         {
                             flag = false;
-                            Console.WriteLine("Вы вышли из клиентского режима");
+                            Console.WriteLine("Вы вышли из администраторского режима");
                         }
                         else { flag = true; }
                     }

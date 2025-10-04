@@ -12,3 +12,4 @@ C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\
 C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.pdb
 C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.genruntimeconfig.cache
 C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\ref\VendingMachineConsoleApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\VendingMachineConsoleApp\obj\Debug\net8.0\VendingMachineConsoleApp.sourcelink.json
