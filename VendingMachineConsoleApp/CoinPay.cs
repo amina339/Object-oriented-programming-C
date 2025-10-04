@@ -49,7 +49,7 @@ public static class CoinPay
             }
             else
             {
-                Console.WriteLine("Некорректный ввод");
+                Console.WriteLine("Некорректный ввод. Введите снова");
             }
         }
     }
