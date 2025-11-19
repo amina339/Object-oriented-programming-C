@@ -7,22 +7,24 @@ using System.Threading.Tasks;
 
 public class Courses_Management
 {
-    public static Course? Create_Course(string title, string type, string place)
+    public static bool Create_Course(string title, string type, string place, List<Course> courses)
     {
         List<Student> empty_students = new List<Student>();
         
         if (type == "онлайн-курс")
         {
             Course course = new Online_Course(title, type, empty_students, place, null);
-            return course;
+            courses.Add(course);
+            return true;
                 
         }
         else if (type == "офлайн-курс")
         {
             Course course = new Offline_Course(title, type, null, empty_students, place);
-            return course;
+            courses.Add(course);
+            return true;
         }
-        return null;
+        return false;
     }
     public static void Delete_Course(Course course, List<Course> courses, List<Teacher> teachers)
     {

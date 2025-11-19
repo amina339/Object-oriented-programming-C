@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 public abstract class Person
 {
-    private int _age;
     private int _id;
     public int Id {
         get { return _id; }
@@ -19,7 +18,7 @@ public abstract class Person
         }
     }
     public string FullName { get; set; }
-    public abstract void Show_Person_Info();
+    public abstract StringBuilder Show_Person_Info();
 
     public Person(int id, string fullName)
     {
@@ -54,14 +53,14 @@ public class Student : Person
     {
         Group = group;
     }
-    public override void Show_Person_Info()
+    public override StringBuilder Show_Person_Info()
     {
         var sb = new StringBuilder();
         sb.AppendLine();
         sb.AppendLine($"ФИО: {FullName}");
         sb.AppendLine($"Id: {Id}");
         sb.AppendLine($"Группа: {Group}");
-        Console.WriteLine(sb.ToString());
+        return sb;
     }
 }
 
@@ -69,7 +68,7 @@ public class Teacher : Person
 {
     public string Institute { get; set; }
     public List<Course> Courses = new List<Course>();
-    public override void Show_Person_Info()
+    public override StringBuilder Show_Person_Info()
     {
         var sb = new StringBuilder();
         sb.AppendLine();
@@ -85,7 +84,7 @@ public class Teacher : Person
                     sb.AppendLine($"{Courses[i].Type} '{Courses[i].Title}'");
                 }
             }
-        Console.WriteLine(sb.ToString());
+        return sb;
     }
     public void Add_To_Course(Course course)
     {

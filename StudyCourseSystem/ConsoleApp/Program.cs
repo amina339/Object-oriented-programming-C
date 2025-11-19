@@ -39,7 +39,7 @@ class Program
                     Courses_Management.Show_Courses(courses);
                     string chosen_course_title = Console.ReadLine()?.Trim();
                     Course? found_course = Courses_Management.Find_Course(courses, chosen_course_title);
-                    if (found_course != null) { found_course.ShowCourseInfo(); flag = false; }
+                    if (found_course != null) { StringBuilder sb = found_course.ShowCourseInfo(); Console.WriteLine(sb.ToString());  flag = false; }
                     else
                     {
                         Console.WriteLine("Курс не найден. Попробуете снова? (д/любой другой знак)");
@@ -57,7 +57,7 @@ class Program
                     Person.Show_People(allPeople);
                     string chosen_person_name = Console.ReadLine()?.Trim();
                     Person? found_person = Person.Find_Person(allPeople, chosen_person_name);
-                    if (found_person != null) { found_person.Show_Person_Info(); cont = false; }
+                    if (found_person != null) { Console.WriteLine(found_person.Show_Person_Info().ToString()); cont = false; }
                     else
                     {
                         Console.WriteLine("Человек не найден. Попробуете снова? (д/любой другой знак)");
@@ -70,34 +70,35 @@ class Program
             {
                 Console.WriteLine("Впишите название курса, который хотите создать: ");
                 string title = Console.ReadLine();
-                Course new_course = null;
+                bool new_course = false;
                 bool flag = true;
+                string type = "";
                 while (flag)
                 {
                     Console.WriteLine("Впишите тип курса, который хотите создать (онлайн-курс/офлайн-курс): ");
-                    string type = Console.ReadLine();
+                    type = Console.ReadLine();
                     if (type == "онлайн-курс")
                     {
                         Console.WriteLine("Впишите платформу, на которой будет реализован курс: ");
                         string platform = Console.ReadLine();
-                        new_course = Courses_Management.Create_Course(title, type, platform);
+                        new_course = Courses_Management.Create_Course(title, type, platform, courses);
                         flag = false;
                     }
                     else if (type == "офлайн-курс")
                     {
                         Console.WriteLine("Впишите место, в котором будет преподаваться курс: ");
                         string place = Console.ReadLine();
-                        new_course = Courses_Management.Create_Course(title, type, place);
+                        new_course = Courses_Management.Create_Course(title, type, place, courses);
                         flag = false;
                     }
                     else
                     {
                         Console.WriteLine("Некорректный ввод. Попробуете заново? (д/любой другой знак): ");
                         string answer_ = Console.ReadLine();
-                        if (answer_ != "д") { flag = false; }
+                        if (answer_ != "д") { flag = false; } //? 
                     }
                 }
-                if (new_course != null) { courses.Add(new_course); Console.WriteLine($"✅ Вы создали {new_course.Type}: '{new_course.Title}'"); }
+                if (new_course != false) { Console.WriteLine($"✅ Вы создали {type}: '{title}'"); }
                 else { Console.WriteLine("Вы отменили создание курса ❌"); }
             }
             else if (answer == "3")
@@ -161,7 +162,7 @@ class Program
                 if (answer != "д") { should_continue = false; }
             }
 
-            if (new List<string> { "0", "2", "3", "4" }.Contains(answer))
+            if (new List<string> { "0", "1", "2", "3", "4" }.Contains(answer))
             {
                 Console.WriteLine($"Режим ({answer}) окончен. Хотите продолжить? (д/любой другой знак)");
                 answer = Console.ReadLine();

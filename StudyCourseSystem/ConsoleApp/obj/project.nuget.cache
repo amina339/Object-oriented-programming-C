@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rXpx+s/kALA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sarmu\\Object-oriented-programming-C\\StudyCourseSystem\\ConsoleApp\\StudyCourseSystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sarmu\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\sarmu\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
+    "C:\\Users\\sarmu\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512"
+  ],
+  "logs": []
+}
