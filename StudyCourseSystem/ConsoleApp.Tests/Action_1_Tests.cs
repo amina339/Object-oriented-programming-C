@@ -33,21 +33,21 @@ public class Action_1_Tests
         teacher_1.Add_To_Course(course_1);
     }
     [Fact]
-    public void NotFoundPerson()
+    public void FindPerson_ExpectNotFoundPerson() //checks if non-existent person is not found
     {
         List<Person> allPeople = teachers.Cast<Person>().Concat(students.Cast<Person>()).ToList();
         Person? found = Person.Find_Person(allPeople, "Артемьевна Анна Ильична");
         Assert.Null(found);
     }
     [Fact]
-    public void FoundPerson()
+    public void FindPersin_IsFound() //checks if person is found
     {
         List<Person> allPeople = teachers.Cast<Person>().Concat(students.Cast<Person>()).ToList();
         Person? found = Person.Find_Person(allPeople, "Артемьевна Лариса Ильична");
         Assert.True(found == student_3);
     }
     [Fact]
-    public void Show_Info_Student()
+    public void Show_Person_Info_StudentFormat() //checks format for student
     {
         var sb_3 = new StringBuilder();
         sb_3.AppendLine();
@@ -57,7 +57,7 @@ public class Action_1_Tests
         Assert.Equal(sb_3.ToString(), student_3.Show_Person_Info().ToString());
     }
     [Fact]
-    public void Show_Info_Teacher()
+    public void Show_Person_Info_TeacherFormat() //checks format for teacher
     {
         var sb_4 = new StringBuilder();
         sb_4.AppendLine();

@@ -20,7 +20,7 @@ public class Action_2_Tests
         courses = new List<Course>() { course_1, course_2, course_3 };
     }
     [Fact]
-    public void CreatedCourse()
+    public void CreateCourse_ExpectCoursesContainCourse() //checks if created course in course list
     {
         int original_length = courses.Count;
         if (Courses_Management.Create_Course("Math", "офлайн-курс", "Ломоносова", courses))

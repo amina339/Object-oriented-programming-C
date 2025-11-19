@@ -41,20 +41,20 @@ public class Action_0_Tests
     }
 
     [Fact]
-    public void NotFoundCourse()
+    public void FindCourse_IsNotFound() //checks if non-existent course is not found
     {
 
         Course? not_found = Courses_Management.Find_Course(courses, "Math");
         Assert.Null(not_found);
     }
     [Fact]
-    public void FoundCourse()
+    public void FindCourse_IsFound() //checks if course is found
     {
         Course? not_found = Courses_Management.Find_Course(courses, "Биология и экология 🥬");
         Assert.True(not_found == course_3);
     }
     [Fact]
-    public void EmptyCourseInfo()
+    public void ShowCourseInfo_EmptyCourseInfo() //checks format for empty course
     {
         List<Student> empty_student = new List<Student>();
         Course new_course_1 = new Offline_Course("", "офлайн", null, empty_student, "");
@@ -72,7 +72,7 @@ public class Action_0_Tests
         Assert.Equal(sb_1.ToString(), new_course_1.ShowCourseInfo().ToString());
     }
     [Fact]
-    public void FullCourseInfo()
+    public void ShowCourseInfo_FullCourseInfo() //checks format for full course
     {
         List<Student> empty_student = new List<Student>();
         Course new_course_2 = new Offline_Course("Math", "офлайн", teacher_1, empty_student, "Ломоносова 9");
