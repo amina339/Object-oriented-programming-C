@@ -4,57 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public abstract class Order
+public abstract class OrderType
 {
     public int Id { get; set; }
-    public List<MenuItem> Products { get; set; }
-    public int DeliveryTime { get; set; } = 25;
-    protected decimal Price { get; set;}
-    public Order(int id, List<MenuItem> products)
+    public OrderCompletion OrderCompletion { get; set; } 
+    protected float DeliveryTimeCoeff { get; set; } = 1.05f;
+    public OrderType(int id, OrderCompletion orderCompletion)
     {
         Id = id;
-        Products = products;
+        OrderCompletion = orderCompletion;
     }
-    public virtual void SetPrice()
-    {
-        foreach (MenuItem item in Products)
-        {
-            Price = Price + item.Price;
-        }
-        Price = Price + DeliveryTime * 5;
-    }
-    public virtual decimal GetPrice() { return Price; }
 }
 
-public class StandardOrder: Order
+public class StandardOrder: OrderType
 {
-    public StandardOrder(int id, List<MenuItem> products) : base(id, products)
+    public StandardOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
     {
     }
 }
 
-public class ExpressOrder: Order
+public class ExpressOrder: OrderType
 {
-    public ExpressOrder(int id, List<MenuItem> products) : base(id, products)
+    public ExpressOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
     {
-        DeliveryTime = 15;
-    }
-    public override void SetPrice()
-    {
-        foreach (MenuItem item in Products)
-        {
-            Price = Price + item.Price;
-        }
-        Price = Price + DeliveryTime * 30;
+        DeliveryTimeCoeff = 1.15f;
     }
 }
-public class BarterOrder : Order
+public class BarterOrder : OrderType
 {
-    public BarterOrder(int id, List<MenuItem> products) : base(id, products)
+    public BarterOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
     {
+        DeliveryTimeCoeff = 0f;
     }
-    public override void SetPrice()
-    {
-        Price = 0;
-    }
+
 }

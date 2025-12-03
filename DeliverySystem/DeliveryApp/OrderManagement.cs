@@ -8,32 +8,32 @@ using static System.Environment;
 public abstract class OrderFactory //factory method
 {
     public int Id { get; set; }
-    public List<MenuItem> Products { get; set; }
-    public abstract Order CreateOrder();
+    public OrderCompletion OrderCompletion { get; set; }
+    public abstract OrderType CreateOrder();
 
     // Шаблонный метод
-    public Order PlanCreation()
+    public OrderType PlanCreation()
     {
         var order = CreateOrder();
         return order;
     }
-    public OrderFactory(int id, List<MenuItem> products) { Id = id; Products = products; }
+    public OrderFactory(int id, OrderCompletion orderCompletion) { Id = id; OrderCompletion = orderCompletion; }
 }
 
 public class StandardOrderFactory : OrderFactory
 {
-    public override Order CreateOrder() => new StandardOrder(Id, Products);
-    public StandardOrderFactory(int id, List<MenuItem> products): base(id, products) { }
+    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public StandardOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }
 
 public class ExpressOrderFactory : OrderFactory
 {
-    public override Order CreateOrder() => new StandardOrder(Id, Products);
-    public ExpressOrderFactory(int id, List<MenuItem> products) : base(id, products) { }
+    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public ExpressOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }
 
 public class SpecialOrderFactory : OrderFactory
 {
-    public override Order CreateOrder() => new StandardOrder(Id, Products);
-    public SpecialOrderFactory(int id, List<MenuItem> products) : base(id, products) { }
+    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public SpecialOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }

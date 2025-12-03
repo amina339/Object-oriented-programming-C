@@ -22,7 +22,6 @@ public class MenuCategory : MenuComponent
 {
     private List<MenuComponent> _dishes = new List<MenuComponent>();
     public IEnumerable<MenuComponent> GetDishes() => _dishes.AsReadOnly();
-
     public void Add(MenuComponent component) => _dishes.Add(component);
     public void Remove(MenuComponent component) => _dishes.Remove(component);
     public MenuCategory(string name, string description) : base(name, description) { }
