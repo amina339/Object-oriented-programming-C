@@ -4,37 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public abstract class OrderType
+public abstract class Order
 {
     public int Id { get; set; }
     public OrderCompletion OrderCompletion { get; set; } 
-    protected float DeliveryTimeCoeff { get; set; } = 1.05f;
-    public OrderType(int id, OrderCompletion orderCompletion)
+    public string Status { get; set; }
+    public decimal DeliveryTimeCoeff { get; set; } = 1.05m;
+    public Order(int id, OrderCompletion orderCompletion, string status)
     {
         Id = id;
         OrderCompletion = orderCompletion;
+        Status = status;
     }
 }
 
-public class StandardOrder: OrderType
+public class StandardOrder: Order
 {
-    public StandardOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
+    public StandardOrder(int id, OrderCompletion orderCompletion, string status) : base(id, orderCompletion, status)
     {
     }
 }
 
-public class ExpressOrder: OrderType
+public class ExpressOrder: Order
 {
-    public ExpressOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
+    public ExpressOrder(int id, OrderCompletion orderCompletion, string status) : base(id, orderCompletion, status)
     {
-        DeliveryTimeCoeff = 1.15f;
+        DeliveryTimeCoeff = 1.15m;
     }
 }
-public class BarterOrder : OrderType
+public class BarterOrder : Order
 {
-    public BarterOrder(int id, OrderCompletion orderCompletion) : base(id, orderCompletion)
+    public BarterOrder(int id, OrderCompletion orderCompletion, string status) : base(id, orderCompletion, status)
     {
-        DeliveryTimeCoeff = 0f;
+        DeliveryTimeCoeff = 0m;
     }
 
 }

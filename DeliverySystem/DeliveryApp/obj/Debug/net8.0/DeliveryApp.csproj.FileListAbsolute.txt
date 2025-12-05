@@ -1,0 +1,15 @@
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\bin\Debug\net8.0\DeliveryApp.exe
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\bin\Debug\net8.0\DeliveryApp.deps.json
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\bin\Debug\net8.0\DeliveryApp.runtimeconfig.json
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\bin\Debug\net8.0\DeliveryApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\bin\Debug\net8.0\DeliveryApp.pdb
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.AssemblyInfoInputs.cache
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.AssemblyInfo.cs
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.csproj.CoreCompileInputs.cache
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.sourcelink.json
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\refint\DeliveryApp.dll
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.pdb
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\DeliveryApp.genruntimeconfig.cache
+C:\Users\sarmu\Object-oriented-programming-C\DeliverySystem\DeliveryApp\obj\Debug\net8.0\ref\DeliveryApp.dll

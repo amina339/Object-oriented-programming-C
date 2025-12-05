@@ -9,14 +9,14 @@ public class OrderCompletion //FluentBuilder
     public bool _hasExtraSauce { get; }
     public bool _hasExtraSpice { get; }
     public bool _hasExtraCultre { get; }
-    public List<MenuItem> _menuItems { get; }
+    public List<MenuItem> MenuItems { get; }
 
     public OrderCompletion(bool hasExtraSauce, bool hasExtraSpice, bool hasExtraCultre, List<MenuItem> menuItems)
     {
         _hasExtraSauce = hasExtraSauce;
         _hasExtraSpice = hasExtraSpice;
         _hasExtraCultre = hasExtraCultre;
-        _menuItems = menuItems;
+        MenuItems = menuItems;
     }
 }
 public interface IOrderCompletionBuilder
@@ -32,7 +32,7 @@ public class OrderBuilder : IOrderCompletionBuilder
     private bool _hasExtraSauce;
     private bool _hasExtraSpice;
     private bool _hasExtraCultre;
-    private List<MenuItem> _menuItems;
+    private List<MenuItem> MenuItems;
 
     public IOrderCompletionBuilder AddExtraSauce()
     {
@@ -42,7 +42,7 @@ public class OrderBuilder : IOrderCompletionBuilder
     public IOrderCompletionBuilder AddExtraSpice()
     {
         _hasExtraSpice = true;
-        return this; // Возвращаем интерфейс
+        return this; 
     }
     public IOrderCompletionBuilder AddExtraCultre()
     {
@@ -52,11 +52,11 @@ public class OrderBuilder : IOrderCompletionBuilder
 
     public IOrderCompletionBuilder AddMenuItems(List<MenuItem> menuItems)
     {
-        _menuItems = menuItems;
+        MenuItems = menuItems;
         return this;
     }
     public OrderCompletion Build()
     {
-        return new OrderCompletion(_hasExtraSauce, _hasExtraSpice, _hasExtraCultre, _menuItems);
+        return new OrderCompletion(_hasExtraSauce, _hasExtraSpice, _hasExtraCultre, MenuItems);
     }
 }

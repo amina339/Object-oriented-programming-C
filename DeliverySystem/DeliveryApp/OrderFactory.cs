@@ -9,10 +9,10 @@ public abstract class OrderFactory //factory method
 {
     public int Id { get; set; }
     public OrderCompletion OrderCompletion { get; set; }
-    public abstract OrderType CreateOrder();
+    public abstract Order CreateOrder();
 
     // Шаблонный метод
-    public OrderType PlanCreation()
+    public Order PlanCreation()
     {
         var order = CreateOrder();
         return order;
@@ -22,18 +22,18 @@ public abstract class OrderFactory //factory method
 
 public class StandardOrderFactory : OrderFactory
 {
-    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public override Order CreateOrder() => new StandardOrder(Id, OrderCompletion, "Created");
     public StandardOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }
 
 public class ExpressOrderFactory : OrderFactory
 {
-    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public override Order CreateOrder() => new ExpressOrder(Id, OrderCompletion, "Created");
     public ExpressOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }
 
 public class SpecialOrderFactory : OrderFactory
 {
-    public override OrderType CreateOrder() => new StandardOrder(Id, OrderCompletion);
+    public override Order CreateOrder() => new BarterOrder(Id, OrderCompletion, "Created");
     public SpecialOrderFactory(int id, OrderCompletion orderCompletion) : base(id, orderCompletion) { }
 }
